@@ -30,7 +30,11 @@
                 <div class="navbar-nav ">
                     <a class="nav-link active" aria-current="page" href="{{ route('task.create') }}">Create Task</a>
                     @auth
-                        <a class="nav-link active" href="{{ route('logout') }}">Logout</a>
+                        <a class="nav-link active" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" >Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     @else
                         <a class="nav-link active" href="{{ route('login') }}">Login</a>
                         <a class="nav-link active" href="{{ route('register') }}">Regsiter</a>

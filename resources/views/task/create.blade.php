@@ -1,6 +1,11 @@
 <x-layout>
     <div class="container">
 
+        @if (Session::has('message'))
+            <div class="alert alert-success" role="alert">
+               Task Added Successfully
+            </div>
+        @endif
 
         <form  action="{{ route('task.store') }}" method="post" class="row g-3 needs-validation" novalidate>
             @csrf
