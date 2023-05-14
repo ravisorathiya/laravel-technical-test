@@ -11,7 +11,6 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/create', [TaskController::class, 'index'])->name('task.create')->middleware('auth');
+
 Route::post('/create/store', [TaskController::class, 'store'])->name('task.store')->middleware('auth');
-
-
 Route::get('/home', [HomeController::class, 'index']);

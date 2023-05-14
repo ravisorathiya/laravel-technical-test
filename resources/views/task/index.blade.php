@@ -10,10 +10,12 @@
             </div>
         </div>
     </div>
-
-
-    <script>
-
+    <script type="module">
+        console.log("Hello")
+        console.log(Echo.channel("task-added"))
+        Echo.channel('task-added').listen('.task-event', (e) => {
+            console.log(e)
+        })
     </script>
 </x-layout>
 
